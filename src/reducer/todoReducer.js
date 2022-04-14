@@ -3,41 +3,41 @@
 const initialState = {
   todoList: [
     {
-      title: "Task One",
-      id: "1",
+      title: 'Task One',
+      id: '1',
       status: false,
     },
     {
-      title: "Task Two",
-      id: "2",
+      title: 'Task Two',
+      id: '2',
       status: false,
     },
     {
-      title: "Task three",
-      id: "3",
+      title: 'Task three',
+      id: '3',
       status: false,
     },
   ],
-};
+}
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_TODO": {
+    case 'ADD_TODO': {
       return {
         ...state,
         todoList: [...state.todoList, action?.payload],
-      };
+      }
     }
-    case "DELETE_TODO": {
+    case 'DELETE_TODO': {
       return {
         ...state,
         todoList: state.todoList.filter(
-          (item) => item.id !== action.payload.id
+          (item) => item.id !== action.payload.id,
         ),
-      };
+      }
     }
 
-    case "EDIT_TODO": {
+    case 'EDIT_TODO': {
       return {
         ...state,
         todoList: state.todoList.map((item) => {
@@ -45,21 +45,20 @@ const todoReducer = (state = initialState, action) => {
             return {
               ...item,
               title: action.payload.title,
-            };
+            }
           } else {
-            return item;
+            return item
           }
         }),
-      };
+      }
     }
-    case "DELETE_ALL_TODO": {
+    case 'DELETE_ALL_TODO': {
       return {
         ...state,
         todoList: [],
-      };
+      }
     }
-    case "UPDATE_STATUS": {
-      // console.log("action", action);
+    case 'UPDATE_STATUS': {
       return {
         ...state,
         todoList: state.todoList.map((item) => {
@@ -67,21 +66,16 @@ const todoReducer = (state = initialState, action) => {
             return {
               ...item,
               status: action.payload.status,
-            };
+            }
           } else {
-            return item;
+            return item
           }
         }),
-        // todoList: state.todoList.map((item) =>
-        //   item.id === action.payload.id
-        //     ? (item.status = action.payload.status)
-        //     : item
-        // ),
-      };
+      }
     }
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default todoReducer;
+export default todoReducer

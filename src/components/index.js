@@ -115,6 +115,8 @@ const Todo = () => {
       {''}
       <br />
       <Stack direction="column" spacing={2}>
+        <br />
+
         <Button
           sx={{
             width: 500,
@@ -122,7 +124,7 @@ const Todo = () => {
           }}
           onClick={() => dispatch(deleteAll())}
           variant="contained"
-          color="success"
+          color="secondary"
           size="small"
         >
           Delete All Todos

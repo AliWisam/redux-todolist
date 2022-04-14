@@ -1,6 +1,5 @@
 /** @format */
 
-import logo from "./logo.svg";
 import Todo from "./components";
 import "./App.css";
 

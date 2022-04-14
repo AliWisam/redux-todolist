@@ -36,7 +36,9 @@ const List = ({ data }) => {
   //task is simple string passing
   const handleEdit = (task) => {
     try {
-      if (!task) throw "Empty field";
+      if (!task) {
+        throw new Error("Empty Field");
+      }
       const payload = {
         title: task,
         id: data.id,

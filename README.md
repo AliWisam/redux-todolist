@@ -1,1 +1,1 @@
-[surge](https://aliwisam.surge.sh/)
+https://aliwisam.surge.sh/

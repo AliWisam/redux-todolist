@@ -112,8 +112,6 @@ const Todo = () => {
           Add Todo
         </Button>
       </Stack>
-      {''}
-      <br />
       <Stack direction="column" spacing={2}>
         <br />
 
